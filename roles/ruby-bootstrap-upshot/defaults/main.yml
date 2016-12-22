@@ -7,4 +7,15 @@ os_packages_dependencies:
   - gcc
   - zlib-devel
   - make
+  - patch
+  - autoconf
+  - gcc-c++
+  - patch
+  - readline-devel
+  - libffi-devel
+  - openssl-devel
+  - automake
+  - libtool
+  - bison
+  - sqlite-devel
 ruby_version: "ruby-2.3.3"

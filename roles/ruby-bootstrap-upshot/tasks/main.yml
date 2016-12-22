@@ -4,7 +4,7 @@
     with_items: "{{ os_packages_dependencies }}"
 
   - name: install custom facts
-    template: src="ruby_upshot.fact.j2" dest="/etc/ansible/facts.d" mode="0755" owner="root"
+    template: src="ruby_upshot.fact.j2" dest="/etc/ansible/facts.d/ruby_upshot.fact" mode="0755" owner="root"
 
   - name: reload local facts
     setup: filter="ansible_local"
