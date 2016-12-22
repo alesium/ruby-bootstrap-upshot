@@ -7,3 +7,4 @@ os_packages_dependencies:
   - gcc
   - zlib-devel
   - make
+ruby_version: "ruby-2.3.3"

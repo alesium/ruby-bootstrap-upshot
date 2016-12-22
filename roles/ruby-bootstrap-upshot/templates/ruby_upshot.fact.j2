@@ -1,0 +1,10 @@
+#!/bin/bash
+
+. /usr/lib/upshot_include.sh
+DEFAULT_RUBY_VERSION="{{ ruby_version }}"
+MDATA_RUBY_VERSION=`mdata_get_wrapper ruby_version`
+cat << EOF
+{
+  "rvm_ruby": "${MDATA_RUBY_VERSION:-$DEFAULT_RUBY_VERSION}"
+}
+EOF

@@ -1,3 +1,9 @@
 [submodule "roles/common-bootstrap-upshot"]
 	path = roles/common-bootstrap-upshot
 	url = https://github.com/alesium/common-bootstrap-upshot
+[submodule "roles/rvm1-ansible"]
+	path = roles/rvm1-ansible
+	url = https://github.com/rvm/rvm1-ansible.git
+[submodule "roles/rvm_io.ruby"]
+	path = roles/rvm_io.ruby
+	url = https://github.com/rvm/rvm1-ansible.git
