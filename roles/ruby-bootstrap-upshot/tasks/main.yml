@@ -4,5 +4,4 @@
 
   - name: install packages
     pkg: name="{{ item }}" state="present"
-    with_items:
-      {{ os_packages_dependencies }}
+    with_items: "{{ os_packages_dependencies }}"
