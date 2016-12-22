@@ -3,5 +3,5 @@
     include_vars: "../vars/{{ ansible_distribution }}.yml"
 
   - name: install packages
-    pkg: name="{{ item }}" state="present"
+    yum: name="{{ item }}" state="present"
     with_items: "{{ os_packages_dependencies }}"
