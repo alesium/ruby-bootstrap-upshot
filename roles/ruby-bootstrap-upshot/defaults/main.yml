@@ -1,0 +1,9 @@
+os_packages_dependencies:
+  - ImageMagick
+  - libyaml-devel
+  - nginx
+  - libxml2-devel
+  - libxslt-devel
+  - gcc
+  - zlib-devel
+  - make

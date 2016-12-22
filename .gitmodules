@@ -1,0 +1,3 @@
+[submodule "roles/common-bootstrap-upshot"]
+	path = roles/common-bootstrap-upshot
+	url = https://github.com/alesium/common-bootstrap-upshot

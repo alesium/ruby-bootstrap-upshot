@@ -1,0 +1,5 @@
+---
+  - hosts: localhost
+    roles:
+      - common-bootstrap-upshot
+      - ruby-bootstrap-upshot
