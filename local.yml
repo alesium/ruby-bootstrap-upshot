@@ -6,6 +6,6 @@
       - {
         role: rvm_io.ruby,
         tags: ruby,
-        rvm1_rubies: [{{ ansible_local.ruby_upshot.ruby_version }}],
-        rvm1_user: '{{ ansible_local.common_upshot.upshot_user }}'
+        rvm1_rubies: [ "{{ ansible_local.ruby_upshot.ruby_version }}"],
+        rvm1_user: "{{ ansible_local.common_upshot.upshot_user }}"
         }
