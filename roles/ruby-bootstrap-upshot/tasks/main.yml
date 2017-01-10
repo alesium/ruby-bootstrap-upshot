@@ -21,6 +21,9 @@
   - name: install sidekiq service wrapper
     template: src="{{ upshot_sidekiq_service_src }}" dest="{{ upshot_sidekiq_service_dest }}" mode="0755" owner="root"
 
+  - name: ensure rvm is in bashrc
+    lineinfile: dest="{{ upshot_home }}/.bashrc" regexp="rvm" line='[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' state="present"
+
   - name: start services
     systemd: state="started" name="{{ item }}" daemon_reload="yes"
     with_items:
