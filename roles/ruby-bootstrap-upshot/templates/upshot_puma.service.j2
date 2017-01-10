@@ -1,0 +1,8 @@
+#!/bin/bash
+
+USER="{{ upshot_user }}"
+BASEDIR="{{ upshot_home }}"
+
+. ${BASEDIR}/.bashrc
+
+bundle exec puma -C ${BASEDIR}/rails_app/current/config/puma.rb

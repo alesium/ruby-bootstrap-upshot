@@ -1,0 +1,11 @@
+#!/bin/bash
+
+USER="{{ upshot_user }}"
+BASEDIR="{{ upshot_home }}"
+
+. ${BASEDIR}/.bashrc
+
+for yaml in $(ls {{ upshot_ruby_sidekiq_file }})
+do
+  bundle exec sidekiq -c ${yaml}
+done

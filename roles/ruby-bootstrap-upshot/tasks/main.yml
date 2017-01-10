@@ -8,3 +8,21 @@
 
   - name: reload local facts
     setup: filter="ansible_local"
+
+  - name: install puma systemd
+    template: src="{{ upshot_systemd_puma_service_src }}" dest="{{ upshot_systemd_puma_service_dest }}" mode="0755" owner="root"
+
+  - name: install puma service wrapper
+    template: src="{{ upshot_puma_service_src }}" dest="{{ upshot_puma_service_dest }}" mode="0755" owner="root"
+
+  - name: install sidekiq systemd
+    template: src="{{ upshot_systemd_sidekiq_service_src }}" dest="{{ upshot_systemd_sidekiq_service_dest }}" mode="0755" owner="root"
+
+  - name: install sidekiq service wrapper
+    template: src="{{ upshot_sidekiq_service_src }}" dest="{{ upshot_sidekiq_service_dest }}" mode="0755" owner="root"
+
+  - name: start services
+    systemd: state="started" name="{{ item }}" daemon_reload="yes"
+    with_items:
+      - puma
+      - sidekiq

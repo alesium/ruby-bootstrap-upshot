@@ -1,0 +1,22 @@
+[Unit]
+Description=Sidekiq Servers
+After=network.target
+ConditionPathExistsGlob={{ upshot_ruby_sidekiq_file }}
+
+[Service]
+# Foreground process (do not use --daemon in ExecStart or config.rb)
+Type=simple
+# Preferably configure a non-privileged user
+User={{ upshot_user }}
+# Specify the path to your puma application root
+WorkingDirectory={{ upshot_home }}/rails_app/current
+
+Environment=RAILS_ENV="production"
+Environment=RACK_ENV="production"
+
+ExecStart= /usr/libexec/upshot_puma.service
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
