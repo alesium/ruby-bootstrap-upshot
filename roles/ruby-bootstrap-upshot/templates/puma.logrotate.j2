@@ -8,6 +8,6 @@
   rotate 365
   sharedscripts
   postrotate
-    kill -HUP `cat { upshot_home }}/rails_app/shared/pids/puma.pid`
+    kill -HUP `cat {{ upshot_home }}/rails_app/shared/pids/puma.pid`
   endscript
 }
