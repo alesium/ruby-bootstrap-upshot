@@ -15,6 +15,9 @@
   - name: install puma service wrapper
     template: src="{{ upshot_puma_service_src }}" dest="{{ upshot_puma_service_dest }}" mode="0755" owner="root"
 
+  - name: install puma logrotate
+    template: src="{{ upshot_puma_logrotate_src }}" dest="{{ upshot_puma_logrotate_dest }}" mode="0755" owner="root"
+
   - name: install sidekiq systemd
     template: src="{{ upshot_systemd_sidekiq_service_src }}" dest="{{ upshot_systemd_sidekiq_service_dest }}" mode="0755" owner="root"
 

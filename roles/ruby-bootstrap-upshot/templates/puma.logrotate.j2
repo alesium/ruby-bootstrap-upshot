@@ -1,0 +1,13 @@
+{{ upshot_home }}/rails_app/shared/log/*.log {
+  compress
+  daily
+  dateext
+  delaycompress
+  missingok
+  notifempty
+  rotate 365
+  sharedscripts
+  postrotate
+    kill -HUP `cat { upshot_home }}/rails_app/shared/pids/puma.pid`
+  endscript
+}

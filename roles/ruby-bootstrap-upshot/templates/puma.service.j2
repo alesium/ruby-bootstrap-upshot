@@ -13,8 +13,8 @@ User={{ upshot_user }}
 # Specify the path to your puma application root
 WorkingDirectory={{ upshot_home }}/rails_app/current
 
-Environment=RAILS_ENV="production"
-Environment=RACK_ENV="production"
+Environment=RAILS_ENV=production
+Environment=RACK_ENV=production
 
 ExecStart= {{ upshot_puma_service_dest }}
 
