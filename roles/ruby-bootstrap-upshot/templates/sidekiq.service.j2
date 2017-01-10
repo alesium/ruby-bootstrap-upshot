@@ -14,7 +14,7 @@ WorkingDirectory={{ upshot_home }}/rails_app/current
 Environment=RAILS_ENV="production"
 Environment=RACK_ENV="production"
 
-ExecStart= /usr/libexec/upshot_puma.service
+ExecStart= {{ upshot_sidekiq_service_dest }}
 
 Restart=always
 
