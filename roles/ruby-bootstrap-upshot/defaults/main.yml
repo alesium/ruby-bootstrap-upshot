@@ -23,7 +23,7 @@ os_packages_dependencies:
 ruby_version: "ruby-2.3.3"
 upshot_home: "/home/vcap"
 upshot_user: "{{ ansible_local.common_upshot.upshot_user }}"
-upshot_ruby_puma_file: "{{ upshot_home }}/rails_app/current/config/puma.rb"
+upshot_ruby_puma_file: "{{ upshot_home }}/rails_app/shared/config/puma.rb"
 upshot_ruby_sidekiq_file: "{{ upshot_home }}/rails_app/current/config/sidekiq/*.yml"
 upshot_systemd_puma_service_src: "puma.service.j2"
 upshot_systemd_puma_service_dest: "/etc/systemd/system/puma.service"
