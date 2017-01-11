@@ -2,6 +2,7 @@
 Description=Sidekiq Servers
 After=network.target
 ConditionPathExistsGlob={{ upshot_ruby_sidekiq_file }}
+Wants=redis.service
 
 [Service]
 # Foreground process (do not use --daemon in ExecStart or config.rb)

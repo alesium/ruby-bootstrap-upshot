@@ -31,4 +31,5 @@
     systemd: state="started" name="{{ item }}" daemon_reload="yes"
     with_items:
       - puma
+      - redis
       - sidekiq
