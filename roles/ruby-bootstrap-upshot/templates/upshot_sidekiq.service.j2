@@ -2,7 +2,7 @@
 
 USER="{{ upshot_user }}"
 BASEDIR="{{ upshot_home }}"
-
+RAILS_ENV="production"
 . ${BASEDIR}/.bashrc
 
 for yaml in $(ls {{ upshot_ruby_sidekiq_file }})
