@@ -18,6 +18,12 @@
   - name: install puma logrotate
     template: src="{{ upshot_puma_logrotate_src }}" dest="{{ upshot_puma_logrotate_dest }}" mode="0755" owner="root"
 
+  - name: upload nginx config
+    template: src="upshot_nginx.conf.j2" dest="/etc/nginx/conf.d/upshot_puma.conf" mode="0644" owner="nginx"
+
+  - name: enable nginx
+    systemd: state="started" enabled="yes" name="nginx"
+
   - name: install sidekiq systemd
     template: src="{{ upshot_systemd_sidekiq_service_src }}" dest="{{ upshot_systemd_sidekiq_service_dest }}" mode="0755" owner="root"
 
