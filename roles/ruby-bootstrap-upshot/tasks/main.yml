@@ -21,8 +21,11 @@
   - name: upload nginx config
     template: src="upshot_nginx.conf.j2" dest="/etc/nginx/conf.d/upshot_puma.conf" mode="0644" owner="nginx"
 
+  - name: patch nginx service file
+    lineinfile: dest="/usr/lib/systemd/system/nginx.service" regexp="PrivateTmp=true" line="PrivateTmp=false" state="present"
+
   - name: enable nginx
-    systemd: state="started" enabled="yes" name="nginx"
+    systemd: state="started" enabled="yes" name="nginx" daemon_reload="yes"
 
   - name: install sidekiq systemd
     template: src="{{ upshot_systemd_sidekiq_service_src }}" dest="{{ upshot_systemd_sidekiq_service_dest }}" mode="0755" owner="root"
