@@ -20,6 +20,8 @@ os_packages_dependencies:
   - sqlite-devel
   - nodejs
   - redis
+  - postgresql-devel
+  - mysql-devel
 ruby_version: "ruby-2.3.3"
 upshot_home: "{{ ansible_local.upshot_common.upshot_home }}"
 upshot_user: "{{ ansible_local.upshot_common.upshot_user }}"
