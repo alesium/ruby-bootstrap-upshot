@@ -2,10 +2,10 @@
 
 USER="{{ upshot_user }}"
 BASEDIR="{{ upshot_home }}"
-RAILS_ENV="production"
 . ${BASEDIR}/.bashrc
 
+cd $BASEDIR/rails_app/current
 for yaml in $(ls {{ upshot_ruby_sidekiq_file }})
 do
-  bundle exec sidekiq -c ${yaml}
+  RAILS_ENV="production" bundle exec sidekiq -C ${yaml}
 done
