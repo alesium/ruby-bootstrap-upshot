@@ -1,4 +1,5 @@
 #!/bin/sh
+exit 0
 set -x
 BOOTSTRAP_URL="https://github.com/alesium/ruby-bootstrap-upshot.git"
 
