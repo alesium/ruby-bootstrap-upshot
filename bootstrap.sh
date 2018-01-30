@@ -1,8 +1,10 @@
 #!/bin/sh
-exit 0
 set -x
 BOOTSTRAP_URL="https://github.com/alesium/ruby-bootstrap-upshot.git"
 
+if [ -d /home/vcap ]; then
+   exit 0
+fi
 curl -s https://raw.githubusercontent.com/alesium/common-bootstrap-upshot/master/bootstrap.sh > /tmp/common-bootstrap.sh
 . /tmp/common-bootstrap.sh
 
